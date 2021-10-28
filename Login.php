@@ -14,15 +14,15 @@ if (!empty($_POST['email']) && !empty($_POST['password'])) {
         header("Location: menu_ppal.php");
       } else {
         $message = 'Sorry, the password is incorrect';
-        $class = 'text-false';
+        $tipo = 'error';
       }
     }else {
       $message = 'Sorry, the username is incorrect';
-      $class = 'text-false';
+      $tipo = 'error';
     }
   }else {
     $message = 'Sorry, the username or password is incorrect';
-    $class = 'text-false';
+    $tipo = 'error';
   }
 }
 
@@ -54,12 +54,9 @@ if (!empty($_POST['email']) && !empty($_POST['password'])) {
 
 <body>
   <?php if (!empty($message)) : ?>
-    <div class="<?php echo $class; ?>">
-      <p>
-        <center><?= $message ?></center>
-      </p>
-    </div>
-    <br></br>
+    <script>
+      Swal.fire({icon:"<?php echo($tipo); ?>",title:"<?php echo($message); ?>",timer:"6000",timerProgressBar:"true"});
+    </script>
   <?php endif; ?>
   <nav class="main">
     <a href="index.php"><img src="assets/img/login.png" width="180px" height="180px"></a>
