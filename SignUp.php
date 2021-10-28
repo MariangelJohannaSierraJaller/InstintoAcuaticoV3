@@ -3,7 +3,7 @@
   require 'conexion.php';
   
   $message = '';
-  $class = '';
+  $tipo = '';
   
   if ( !empty($_POST['email']) && !empty($_POST['name']) && !empty($_POST['lastname']) && !empty($_POST['phone'])  && !empty($_POST['direction'])  && !empty($_POST['password'])){
 		$records = $con->prepare('SELECT id, email FROM usuarios WHERE email = :email');
@@ -46,11 +46,11 @@
 			  }
 			} else {
 			  $message = 'Ha ocurrido un error creando tu cuenta, inténtalo de nuevo.';
-			  $class="text-false";
+			  $tipo="text-false";
 			}				
 		}else{
 			$message = $correo.' -Este email actualmente está vinculado a una cuenta.';
-			$class="text-false";
+			$tipo="text-false";
 		}
  
 	}
@@ -81,8 +81,9 @@
 </head>
 <body>
 	<?php if (!empty($message)): ?>
-		<div class="<?php echo $class; ?>"><p><center><?=$message ?></center></p></div>
-		<br></br>
+		<script>
+		      Swal.fire({icon:"<?php echo($tipo); ?>",title:"<?php echo($message); ?>",timer:"6000",timerProgressBar:"true"});
+		</script>
 	<?php endif; ?>
 	<nav class="main">
 			<a href="index.php"><img src="assets/img/login.png" width="180px" height="180px" ></a>
