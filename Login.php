@@ -43,6 +43,7 @@ if (!empty($_POST['email']) && !empty($_POST['password'])) {
   <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
   <!-- Template Main CSS File -->
   <link href="assets/css/styleLogin.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
   <!-- =======================================================
   * Template Name: Bocor - v2.2.1
