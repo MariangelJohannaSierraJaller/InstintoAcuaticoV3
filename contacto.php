@@ -241,9 +241,9 @@ if (!empty($_POST['email']) && !empty($_POST['name']) && !empty($_POST['lastname
                     <div class="logo"><a href="index.php"><img src="assets/img/login.png"></a></div>
                     <h1>Solicitud de Contacto</h1>
                     <?php if (!empty($message)) : ?>
-                    <div class="<?php echo $class; ?>">
-                        <p><center><?= $message ?></center></p>
-                    </div>
+                        <script>
+                          Swal.fire({icon:"<?php echo($tipo); ?>",title:"<?php echo($message); ?>",timer:"6000",timerProgressBar:"true"});
+                        </script>
                     <?php endif; ?>
                         <div class="formsContacto">
                             <div  class="col">
