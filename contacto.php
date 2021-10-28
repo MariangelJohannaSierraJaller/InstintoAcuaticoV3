@@ -2,7 +2,7 @@
 require 'conexion.php';
 
 $message = '';
-$class = '';
+$tipo = '';
 
 if (!empty($_POST['email']) && !empty($_POST['name']) && !empty($_POST['lastname']) && !empty($_POST['phone'])  && !empty($_POST['message'])){
     $sql = "INSERT INTO contacto (name, lastname, email, phone, message) VALUES (:name, :lastname, :email, :phone, :message)";
@@ -15,7 +15,7 @@ if (!empty($_POST['email']) && !empty($_POST['name']) && !empty($_POST['lastname
 
     if ($stmt->execute()) {
         $message = 'Tu solicitud de Contacto fue Creada con exito';
-        $class = "text-true";
+        $tipo = "success";
 
         $records = $con->prepare('SELECT * FROM contacto WHERE email = :email');
         $records->bindParam(':email', $_POST['email']);
@@ -206,12 +206,14 @@ if (!empty($_POST['email']) && !empty($_POST['name']) && !empty($_POST['lastname
             $email=mail($correo,$asunto,$mjs);
             if($email){
                 $message = $message." Ademas se envio un correo a: ".$correo;
+                $tipo = "error";
             } else{
                 $message = $message." No se envio un correo a: ".$correo;
+                $tipo = "error";
             }
         } else {
         $message = 'Tu solicitud de Contacto no fue Creada con exito';
-        $class = "text-false";
+        $tipo = "error";
         }
     }
 }
@@ -226,6 +228,7 @@ if (!empty($_POST['email']) && !empty($_POST['name']) && !empty($_POST['lastname
   <meta content="" name="description">
   <meta content="" name="keywords">
   <link href="assets/css/styleContacto.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body>
     <div class="ContactoBanner">
