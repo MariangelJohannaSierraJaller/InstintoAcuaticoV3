@@ -71,6 +71,7 @@
   
   <!-- Template Main CSS File -->
   <link href="assets/css/styleLogin.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
   <!-- =======================================================
   * Template Name: Bocor - v2.2.1
