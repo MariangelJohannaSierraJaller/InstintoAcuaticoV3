@@ -83,7 +83,7 @@ require 'conexion.php'
             </td>
           </tr>
         <?php } ?>
-        <a href="menu_ppalAdmin.php?action=download_excel"><button type='button' class="btn btn-success">Descargar</a>
+        <a href="excel.php"><button type='button' class="btn btn-success">Descargar</a>
       <tbody>
     </table>
 
