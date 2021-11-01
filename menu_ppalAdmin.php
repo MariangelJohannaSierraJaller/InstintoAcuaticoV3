@@ -1,10 +1,6 @@
 <?php
 require 'Seguridad.php';
 require 'conexion.php'
-if(!empty($_GET['action'])){
-  header("Content-Type: application/xls");
-  header("Content-Disposition: attachment; filename= archivo.xls");
-}
 
 ?>
 <?php if (!empty($user)) : ?>
@@ -87,7 +83,7 @@ if(!empty($_GET['action'])){
             </td>
           </tr>
         <?php } ?>
-        <a href="menu_ppalAdmin.php?action=download_excel"><button type='button' class="btn btn-success">Descargar</a>
+        <a href="excel.php"><button type='button' class="btn btn-success">Descargar</a>
       <tbody>
     </table>
 
