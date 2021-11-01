@@ -1,8 +1,8 @@
 <?php
 
 include "conexion.php";
-header("Content-Type: application/xlsx");
-header("Content-Disposition: attachment; filename= archivo.xlsx");
+header("Content-Type: application/xls");
+header("Content-Disposition: attachment; filename= archivo.xls");
 
 ?>
 <table class="content-table">
