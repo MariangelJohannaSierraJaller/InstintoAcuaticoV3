@@ -11,13 +11,14 @@ header("Content-Disposition: attachment; filename= ".$name.".xls");
 <table class="content-table">
     <thead>
     <tr>
-        <th>Id</th>
-        <th>Correo</th>
-        <th>Nombre</th>
-        <th>Apellidos</th>
-        <th>Telefono</th>
-        <th>Direccion</th>
-        <th>Tipo de Usuario</th>
+    <?php
+    $records = $con->prepare('EXPLAIN usuarios');
+    $records->execute();
+    while ($results = $records->fetch(PDO::FETCH_ASSOC)) { ?>
+        <tr>
+            <td><?php echo $results['Field']; ?></td>
+        </tr>
+    <?php } ?>
     </tr>
     </thead>
     <tbody>
