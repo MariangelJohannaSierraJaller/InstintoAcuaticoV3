@@ -1,4 +1,6 @@
 <?php
+
+include "conexion.php";
 header("Content-Type: application/xls");
 header("Content-Disposition: attachment; filename= archivo.xls");
 
@@ -15,6 +17,7 @@ header("Content-Disposition: attachment; filename= archivo.xls");
         <th>Tipo de Usuario</th>
     </tr>
     </thead>
+    <tbody>
     <?php
     $records = $con->prepare('SELECT * FROM usuarios WHERE type = 0');
     $records->execute();
@@ -29,4 +32,5 @@ header("Content-Disposition: attachment; filename= archivo.xls");
             <td><?php echo $results['type']; ?></td>
         </tr>
     <?php } ?>
+    <tbody>
     </table>
