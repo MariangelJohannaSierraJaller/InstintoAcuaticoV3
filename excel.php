@@ -1,7 +1,7 @@
 <?php
 
 include "conexion.php";
-header("Content-Type: application/xls");
+header("Content-Type: application/xlsx");
 header("Content-Disposition: attachment; filename= archivo.xlsx");
 
 ?>
