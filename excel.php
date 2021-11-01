@@ -1,7 +1,7 @@
 <?php
 
 include "conexion.php";
-$table=$_GET['table']
+$table=$_GET['table'];
 $data=date('_Y-m-d_H-i-s');
 $name=$table.$data;
 header("Content-Type: application/xls");
