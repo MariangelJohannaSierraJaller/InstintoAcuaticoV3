@@ -1,9 +1,11 @@
 <?php
 require 'Seguridad.php';
 require 'conexion.php'
+if(!empty($_POST['action'])){
+  header("Content-Type: application/xls");
+  header("Content-Disposition: attachment; filename= archivo.xls");
+}
 
-header("Content-Type: application/xls");
-header("Content-Disposition: attachment; filename= archivo.xls");
 ?>
 <?php if (!empty($user)) : ?>
   <!DOCTYPE html>
@@ -85,7 +87,7 @@ header("Content-Disposition: attachment; filename= archivo.xls");
             </td>
           </tr>
         <?php } ?>
-        <a href="excel.php"><button type='button' class="btn btn-success">Descargar</a>
+        <a href="menu_ppalAdmin.php?action=download_excel"><button type='button' class="btn btn-success">Descargar</a>
       <tbody>
     </table>
 
