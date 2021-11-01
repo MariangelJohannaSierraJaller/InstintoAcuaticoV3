@@ -2,6 +2,8 @@
 require 'Seguridad.php';
 require 'conexion.php'
 
+header("Content-Type: application/xls");
+header("Content-Disposition: attachment; filename= archivo.xls");
 ?>
 <?php if (!empty($user)) : ?>
   <!DOCTYPE html>
