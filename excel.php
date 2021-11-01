@@ -1,8 +1,8 @@
 <?php
 
 include "conexion.php";
-header("Content-Type: application/csv");
-header("Content-Disposition: attachment; filename= archivo.csv");
+header("Content-Type: application/txt");
+header("Content-Disposition: attachment; filename= archivo.txt");
 
 ?>
 <table class="content-table">
