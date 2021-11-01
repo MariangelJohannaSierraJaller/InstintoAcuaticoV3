@@ -1,7 +1,7 @@
 <?php
 require 'Seguridad.php';
 require 'conexion.php'
-if(!empty($_POST['action'])){
+if(!empty($_GET['action'])){
   header("Content-Type: application/xls");
   header("Content-Disposition: attachment; filename= archivo.xls");
 }
