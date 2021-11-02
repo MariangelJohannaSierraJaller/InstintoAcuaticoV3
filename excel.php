@@ -26,9 +26,9 @@ header("Content-Disposition: attachment; filename= ".$name.".xls");
         while ($results = $records->fetch(PDO::FETCH_ASSOC)) { ?>
             <tr>
                 <?php
-                $records = $con->prepare('EXPLAIN usuarios');
-                $records->execute();
-                while ($head = $records->fetch(PDO::FETCH_ASSOC)) { ?>
+                $data = $con->prepare('EXPLAIN usuarios');
+                $data->execute();
+                while ($head = $data->fetch(PDO::FETCH_ASSOC)) { ?>
                         <td><?php echo $results[''.$head['Field'].'']; ?></td>
                 <?php } ?>
             </tr>
