@@ -4,8 +4,8 @@ include "conexion.php";
 $table=$_GET['table'];
 $data=date(' (Y-m-d) (H-i-s)');
 $name=$table.$data;
-header("Content-Type: application/txt");
-header("Content-Disposition: attachment; filename= ".$name.".txt");
+header("Content-Type: application/csv");
+header("Content-Disposition: attachment; filename= ".$name.".csv");
 
 ?>
 <?php
@@ -13,7 +13,7 @@ header("Content-Disposition: attachment; filename= ".$name.".txt");
     $records->execute();
     $header='';
     while ($head = $records->fetch(PDO::FETCH_ASSOC)) { 
-        $header=$header.$head['Field'].' ';
+        $header=$header.$head['Field'].',';
     } 
         echo $header;
         echo "\n";
