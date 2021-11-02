@@ -15,7 +15,8 @@ header("Content-Disposition: attachment; filename= ".$name.".txt");
     while ($head = $records->fetch(PDO::FETCH_ASSOC)) { 
         $header=$header.$head['Field'].' ';
     } 
-        echo ($header.<br>);
+        echo $header;
+        echo "<br>";
 ?>
 <?php
     $records = $con->prepare('SELECT * FROM '.$table.'');
@@ -27,6 +28,7 @@ header("Content-Disposition: attachment; filename= ".$name.".txt");
         while ($head = $data->fetch(PDO::FETCH_ASSOC)) { 
             $dates=$dates.$results[''.$head['Field'].''].' ';
         } 
-            echo ($dates.<br>);
+            echo $dates;
+            echo "<br>";
     } 
 ?>
