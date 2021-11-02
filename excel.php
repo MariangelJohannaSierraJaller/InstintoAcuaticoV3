@@ -12,7 +12,7 @@ header("Content-Disposition: attachment; filename= ".$name.".xls");
     <thead>
         <tr>
             <?php
-            $records = $con->prepare('EXPLAIN usuarios');
+            $records = $con->prepare('EXPLAIN '.$table.'');
             $records->execute();
             while ($head = $records->fetch(PDO::FETCH_ASSOC)) { ?>
                     <td><?php echo $head['Field']; ?></td>
@@ -21,12 +21,12 @@ header("Content-Disposition: attachment; filename= ".$name.".xls");
     </thead>
     <tbody>
         <?php
-        $records = $con->prepare('SELECT * FROM usuarios');
+        $records = $con->prepare('SELECT * FROM '.$table.'');
         $records->execute();
         while ($results = $records->fetch(PDO::FETCH_ASSOC)) { ?>
             <tr>
                 <?php
-                $data = $con->prepare('EXPLAIN usuarios');
+                $data = $con->prepare('EXPLAIN '.$table.'');
                 $data->execute();
                 while ($head = $data->fetch(PDO::FETCH_ASSOC)) { ?>
                         <td><?php echo $results[''.$head['Field'].'']; ?></td>
