@@ -86,16 +86,11 @@ require 'conexion.php'
       <tbody>
     </table>
     <table class="content-table">
-      <thead>
-          <tr>
-            <td>Descargar</td>
-          </tr>
-        </thead>
         <tbody>
           <td>
-          <a href="xls.php?table=usuarios"><button type='button' class="btn btn-success">Descargar xls</a>
-          <a href="csv.php?table=usuarios"><button type='button' class="btn btn-success">Descargar csv</a>
-          <a href="txt.php?table=usuarios"><button type='button' class="btn btn-success">Descargar txt</a>
+          <a href="xls.php?table=usuarios"><button type='button' class="btn btn-success">xls</a>
+          <a href="csv.php?table=usuarios"><button type='button' class="btn btn-success">csv</a>
+          <a href="txt.php?table=usuarios"><button type='button' class="btn btn-success">txt</a>
           </td>
         </tbody>
     </table>
