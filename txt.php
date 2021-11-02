@@ -16,7 +16,7 @@ header("Content-Disposition: attachment; filename= ".$name.".txt");
         $header=$header.$head['Field'].' ';
     } 
         echo $header;
-        echo '\n';
+        echo "\n";
 ?>
 <?php
     $records = $con->prepare('SELECT * FROM '.$table.'');
@@ -29,6 +29,6 @@ header("Content-Disposition: attachment; filename= ".$name.".txt");
             $dates=$dates.$results[''.$head['Field'].''].' ';
         } 
             echo $dates;
-            echo '\n';
+            echo "\n";
     } 
 ?>
