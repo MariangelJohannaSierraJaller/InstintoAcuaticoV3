@@ -29,7 +29,7 @@ header("Content-Disposition: attachment; filename= ".$name.".xls");
                 $records = $con->prepare('EXPLAIN usuarios');
                 $records->execute();
                 while ($head = $records->fetch(PDO::FETCH_ASSOC)) { ?>
-                        <td><?php echo echo $results[$head['Field']]; ?></td>
+                        <td><?php echo $results[string($head['Field'])]; ?></td>
                 <?php } ?>
             </tr>
         <?php } ?>
