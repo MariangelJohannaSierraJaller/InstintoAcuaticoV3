@@ -50,11 +50,11 @@ require 'conexion.php'
     <?php endif; ?>
     <h4>
       <center>Datos de Usuarios</center>
-      <table class="content-table">
+      <table>
           <td>
-            <a href="xls.php?table=usuarios"><button type='button' class="btn btn-success">xls</a>
-            <a href="csv.php?table=usuarios"><button type='button' class="btn btn-success">csv</a>
-            <a href="txt.php?table=usuarios"><button type='button' class="btn btn-success">txt</a>
+            <a href="xls.php?table=usuarios"><button type='button' class="btn btn-success">xls</button></a>
+            <a href="csv.php?table=usuarios"><button type='button' class="btn btn-success">csv</button></a>
+            <a href="txt.php?table=usuarios"><button type='button' class="btn btn-success">txt</button></a>
           </td>
       </table>
     </h4>
