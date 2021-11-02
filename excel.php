@@ -14,24 +14,23 @@ header("Content-Disposition: attachment; filename= ".$name.".xls");
             <?php
             $records = $con->prepare('EXPLAIN usuarios');
             $records->execute();
-            while ($results = $records->fetch(PDO::FETCH_ASSOC)) { ?>
-                    <td><?php echo $results['Field']; ?></td>
+            while ($head = $records->fetch(PDO::FETCH_ASSOC)) { ?>
+                    <td><?php echo $head['Field']; ?></td>
             <?php } ?>
         </tr>
     </thead>
     <tbody>
         <?php
-        $records = $con->prepare('SELECT * FROM usuarios WHERE type = 0');
+        $records = $con->prepare('SELECT * FROM usuarios');
         $records->execute();
         while ($results = $records->fetch(PDO::FETCH_ASSOC)) { ?>
             <tr>
-                <td><?php echo $results['id']; ?></td>
-                <td><?php echo $results['email']; ?></td>
-                <td><?php echo $results['name']; ?></td>
-                <td><?php echo $results['lastname']; ?></td>
-                <td><?php echo $results['phone']; ?></td>
-                <td><?php echo $results['direction']; ?></td>
-                <td><?php echo $results['type']; ?></td>
+                <?php
+                $records = $con->prepare('EXPLAIN usuarios');
+                $records->execute();
+                while ($head = $records->fetch(PDO::FETCH_ASSOC)) { ?>
+                        <td><?php echo echo $results[$head['Field']]; ?></td>
+                <?php } ?>
             </tr>
         <?php } ?>
     <tbody>
