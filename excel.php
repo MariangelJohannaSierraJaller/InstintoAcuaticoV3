@@ -2,7 +2,7 @@
 
 include "conexion.php";
 $table=$_GET['table'];
-$data=date(' Y-m-d H-i-s');
+$data=date(' (Y-m-d) (H-i-s)');
 $name=$table.$data;
 header("Content-Type: application/xls");
 header("Content-Disposition: attachment; filename= ".$name.".xls");
