@@ -83,8 +83,21 @@ require 'conexion.php'
             </td>
           </tr>
         <?php } ?>
-        <a href="excel.php?table=usuarios"><button type='button' class="btn btn-success">Descargar</a>
       <tbody>
+    </table>
+    <table class="content-table">
+      <thead>
+          <tr>
+            <td>Descargar</td>
+          </tr>
+        </thead>
+        <tbody>
+          <td>
+          <a href="xls.php?table=usuarios"><button type='button' class="btn btn-success">Descargar xls</a>
+          <a href="csv.php?table=usuarios"><button type='button' class="btn btn-success">Descargar csv</a>
+          <a href="txt.php?table=usuarios"><button type='button' class="btn btn-success">Descargar txt</a>
+          </td>
+        </tbody>
     </table>
 
   </body>

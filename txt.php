@@ -4,8 +4,8 @@ include "conexion.php";
 $table=$_GET['table'];
 $data=date(' (Y-m-d) (H-i-s)');
 $name=$table.$data;
-header("Content-Type: application/xls");
-header("Content-Disposition: attachment; filename= ".$name.".xls");
+header("Content-Type: application/txt");
+header("Content-Disposition: attachment; filename= ".$name.".txt");
 
 ?>
 <table class="content-table">
@@ -34,4 +34,4 @@ header("Content-Disposition: attachment; filename= ".$name.".xls");
             </tr>
         <?php } ?>
     <tbody>
-    </table>
+</table>
