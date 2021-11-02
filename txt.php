@@ -8,30 +8,25 @@ header("Content-Type: application/txt");
 header("Content-Disposition: attachment; filename= ".$name.".txt");
 
 ?>
-<table class="content-table">
-    <thead>
-        <tr>
-            <?php
-            $records = $con->prepare('EXPLAIN '.$table.'');
-            $records->execute();
-            while ($head = $records->fetch(PDO::FETCH_ASSOC)) { ?>
-                    <td><?php echo $head['Field']; ?></td>
-            <?php } ?>
-        </tr>
-    </thead>
-    <tbody>
-        <?php
-        $records = $con->prepare('SELECT * FROM '.$table.'');
-        $records->execute();
-        while ($results = $records->fetch(PDO::FETCH_ASSOC)) { ?>
-            <tr>
-                <?php
-                $data = $con->prepare('EXPLAIN '.$table.'');
-                $data->execute();
-                while ($head = $data->fetch(PDO::FETCH_ASSOC)) { ?>
-                        <td><?php echo $results[''.$head['Field'].'']; ?></td>
-                <?php } ?>
-            </tr>
-        <?php } ?>
-    <tbody>
-</table>
+<?php
+    $records = $con->prepare('EXPLAIN '.$table.'');
+    $records->execute();
+    $header='';
+    while ($head = $records->fetch(PDO::FETCH_ASSOC)) { 
+        $header=$header.$head['Field'].' ';
+    } 
+        echo $header;
+?>
+<?php
+    $records = $con->prepare('SELECT * FROM '.$table.'');
+    $records->execute();
+    while ($results = $records->fetch(PDO::FETCH_ASSOC)) { 
+        $data = $con->prepare('EXPLAIN '.$table.'');
+        $data->execute();
+        $dates='';
+        while ($head = $data->fetch(PDO::FETCH_ASSOC)) { 
+            $date=$dates.$results[''.$head['Field'].''].' ';
+        } 
+            echo $date;
+    } 
+?>
