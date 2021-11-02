@@ -49,6 +49,13 @@ require 'conexion.php'
     <?php endif; ?>
     <h4>
       <center>Registros de Solicitudes</center>
+      <table>
+          <td>
+            <a href="xls.php?table=registros"><button type='button' class="btn btn-success">xls</button></a>
+            <a href="csv.php?table=registros"><button type='button' class="btn btn-success">csv</button></a>
+            <a href="txt.php?table=registros"><button type='button' class="btn btn-success">txt</button></a>
+          </td>
+      </table>
     </h4>
     <table class="content-table">
       <thead>
