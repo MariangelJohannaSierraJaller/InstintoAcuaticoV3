@@ -1,4 +1,4 @@
-# InstintoAcuaticoa
+# InstintoAcuatico
 
 ![Instinto Acutico](https://instintoacuatico.herokuapp.com/assets/img/hero-img.png)
 
