@@ -2,6 +2,7 @@
 
 include "conexion.php";
 $table=$_GET['table'];
+date_default_timezone_set("America/Bogota");
 $data=date(' (Y-m-d) (H-i-s)');
 $name=$table.$data;
 header("Content-Type: application/xls");
