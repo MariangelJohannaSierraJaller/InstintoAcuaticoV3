@@ -27,6 +27,6 @@ header("Content-Disposition: attachment; filename= ".$name.".txt");
         while ($head = $data->fetch(PDO::FETCH_ASSOC)) { 
             $dates=$dates.$results[''.$head['Field'].''].' ';
         } 
-            echo $date;
+            echo $dates;
     } 
 ?>
