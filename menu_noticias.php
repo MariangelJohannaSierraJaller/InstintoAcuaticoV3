@@ -22,8 +22,9 @@
   <?php include("assets/head/headerHome.html") ?><!-- End Header -->
 
     <center><img src="assets/img/fotos1.jpeg" width="100%"></center>
+    <section class="portafolio">
     <center><h1>Noticias</h1></center>
-    <center><a href="index.php"><img src="assets/img/login.png" width="220px"></a></center>
+    <center><a href="index.php"><img src="assets/img/hero-img.png" width="220px"></a></center>
     <div class="container">
         <?php
             $records = $con->prepare('SELECT * FROM noticias');
@@ -38,6 +39,7 @@
                 </div>
         <?php } ?>
     </div>
+    </section>
 
 <!-- ======= Footer ======= -->
   <?php include("assets/footer/footer.html") ?><!-- End Footer -->
