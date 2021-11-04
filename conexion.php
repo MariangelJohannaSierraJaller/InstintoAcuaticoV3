@@ -6,7 +6,7 @@
 	$server = 'localhost';
 	$username = 'root';
 	$password = '';
-	$database = 'instintoacuatico';
+	$database = 'instintoacuatico';*/
 
 	/* Conexion externamente a freesqldatabase en https://www.phpmyadmin.co/
 	$server = 'sql10.freesqldatabase.com';
