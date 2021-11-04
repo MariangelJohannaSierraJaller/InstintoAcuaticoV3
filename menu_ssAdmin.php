@@ -7,64 +7,39 @@ require 'conexion.php'
   <html>
 
   <head>
-    <meta charset="utf-8">
-    <meta content="width=device-width, initial-scale=1.0" name="viewport">
-
-    <title>Instinto Acuático</title>
-    <meta content="" name="description">
-    <meta content="" name="keywords">
-
-    <!-- Favicons -->
-    <link href="assets/img/favicon.png" rel="icon">
-    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
-
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
-
-    <!-- Vendor CSS Files -->
-    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href="assets/vendor/icofont/icofont.min.css" rel="stylesheet">
-    <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-    <link href="assets/vendor/owl.carousel/assets/owl.carousel.min.css" rel="stylesheet">
-    <link href="assets/vendor/venobox/venobox.css" rel="stylesheet">
-    <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <?php include("assets/default/head.html")?>
+<?php include("assets/head/links.html") ?>
 
     <!-- Template Main CSS File -->
     <link href="assets/css/style.css" rel="stylesheet">
-    <link href="assets/css/styleTables.css" rel="stylesheet">
+    <link href="assets/css/tabla.css" rel="stylesheet">
   </head>
 
   <body>
     <!-- ======= Header ======= -->
-    <?php if ($user['type'] == 0) : ?>
-      <?php include("assets/head/MainHeader0.html") ?>
-    <?php endif; ?>
-    <?php if ($user['type'] == 1) : ?>
-      <?php include("assets/head/MainHeader1.html") ?>
-    <?php endif; ?>
-    <!-- End Header -->
-    
-    <?php if (!empty($user)) : ?>
-      <h1> <?php echo $user['email']; ?></h1>
-    <?php endif; ?>
-    <h4>
-      <center>Registros de Solicitudes</center>
-      <table>
-          <td>
-            <a href="xls.php?table=registros"><button type='button' class="btn btn-success">xls</button></a>
-            <a href="csv.php?table=registros"><button type='button' class="btn btn-success">csv</button></a>
-            <a href="txt.php?table=registros"><button type='button' class="btn btn-success">txt</button></a>
-          </td>
-      </table>
-    </h4>
+    <?php include("assets/head/headerRegistro.html") ?><!-- End Header -->
+
+     <!-- ======= Hero Section ======= -->
+  <section id="hero" class="d-flex align-items-center justify-content-center">
+    <div class="container" data-aos="fade-up">
+
+      <div class="row justify-content-center" data-aos="fade-up" data-aos-delay="150">
+        <div class="col-xl-6 col-lg-8">
+          <h1>Registro de Solicitudes</h1>
+          <center><h2><?php echo $user['name']; ?>, estas son las solicitudes de servicio que han hecho.</h2><center>
+        </div>
+      </div>
+ 
+  </section><!-- End Hero -->
+    <section id="servicio">
     <table class="content-table">
       <thead>
         <tr>
           <th>Id</th>
           <th>Servicio</th>
           <th>Fecha de Registro</th>
-          <th>Fecha de Entrega</th>
-          <th>Hora de Entrega</th>
+          <th>Inicio Curso</th>
+          <th>Finalización del curso</th>
           <th>Correo</th>
           <th>Acciones</th>
         </tr>
@@ -82,13 +57,14 @@ require 'conexion.php'
             <td><?php echo $results['Service_hour']; ?></td>
             <td><?php echo $results['email']; ?></td>
             <td>
-              <a href='modificar_ssAdmin.php?id=<?php echo $results['id']; ?>'><button type='button' class="btn btn-success">Modificar</a>
-              <a href="eliminar_ssAdmin.php?id=<?php echo $results['id']; ?>"><button type='button' class="btn btn-danger">Eliminar</a>
+              <a href='modificar_ssAdmin.php?id=<?php echo $results['id']; ?>'><button type='button' class="button4">Modificar</a>
+              <a href="eliminar_ssAdmin.php?id=<?php echo $results['id']; ?>"><button type='button' class="button2">Eliminar</a>
             </td>
           </tr>
         <?php } ?>
-      <tbody>
+      </tbody>
     </table>
+  </section>
 
   </body>
 
@@ -111,3 +87,14 @@ require 'conexion.php'
   </html>
 
 <?php endif; ?>
+
+
+  <!-- ======= Footer ======= -->
+  <?php include("assets/footer/footer.html") ?><!-- End Footer -->
+
+
+    <?php include("assets/footer/links.html") ?>
+
+</body>
+
+</html>

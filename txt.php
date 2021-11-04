@@ -10,6 +10,7 @@ header("Content-Disposition: attachment; filename= ".$name.".txt");
 
 ?>
 <?php
+    /*Consulta Estructura de Tabla para Obtener Encabeazados*/
     $records = $con->prepare('EXPLAIN '.$table.'');
     $records->execute();
     $header='';
@@ -20,12 +21,14 @@ header("Content-Disposition: attachment; filename= ".$name.".txt");
         echo "\n";
 ?>
 <?php
+    /*Consulta Datos de la Tabla*/
     $records = $con->prepare('SELECT * FROM '.$table.'');
     $records->execute();
     while ($results = $records->fetch(PDO::FETCH_ASSOC)) { 
         $data = $con->prepare('EXPLAIN '.$table.'');
         $data->execute();
         $dates='';
+        /*Consulta Estructura de Tabla para Obtener datos segun encabezado*/
         while ($head = $data->fetch(PDO::FETCH_ASSOC)) { 
             $dates=$dates.$results[''.$head['Field'].''].' ';
         } 

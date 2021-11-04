@@ -1,0 +1,313 @@
+/* 
+Estilos genéricos para Desktops / Laptop 
+*/
+
+table {
+    width: 70%;
+    border-collapse: collapse;
+    background-color: #ffffff;
+    text-align: center;
+    border-radius: 5px 5px 0 0;
+    font-size: 0.9em;
+    margin: auto;
+}
+
+.content-table thead tr {
+    background-color: rgba(38, 75, 162, 0.64);
+    color: #ffffff;
+    font-weight: bold;
+}
+
+.content-table tr,
+.content-table th {
+    padding: 12px 12px;
+    column-span: all;
+}
+
+.content-table tbody tr td a {
+    color: #ffffff;
+}
+
+.content-table tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+
+.content-table tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+}
+
+.content-table tbody tr:last-of-type {
+    border-bottom: 2px solid rgba(99, 122, 175, 0.7);
+}
+
+.content-table tbody tr:hover {
+    font-weight: blod;
+    color: #0489B1;
+}
+
+
+/* 
+Max width before this PARTICULAR table gets nasty
+This query will take effect for any screen smaller than 760px
+and also iPads specifically.
+*/
+
+@media only screen and (max-width: 760px),
+(min-device-width: 768px) and (max-device-width: 1024px) {
+    /* Force table to not be like tables anymore */
+    table,
+    thead,
+    tbody,
+    th,
+    td,
+    tr {
+        display: block;
+        border-collapse: collapse;
+        background-color: #ffffff;
+        text-align: center;
+        border-radius: 5px 5px 0 0;
+        font-size: 1em;
+        width: 100%;
+    }
+    /* Hide table headers (but not display: none;, for accessibility) */
+    thead tr {
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+        background-color: #0489B1;
+        color: #ffffff;
+        font-weight: bold;
+        margin: auto;
+    }
+    tr {
+        border: 1px solid #ccc;
+    }
+    td {
+        /* Behave  like a "row" */
+        border: none;
+        border-bottom: 1px solid #eee;
+        position: relative;
+        padding-left: 50%;
+    }
+    td:before {
+        /* Now like a table header */
+        position: absolute;
+        /* Top/left values mimic padding */
+        top: 6px;
+        left: 6px;
+        width: 45%;
+        padding-right: 10px;
+        white-space: nowrap;
+        background: rgba(150, 179, 246, 0.36);
+    }
+    /*
+  Label the data
+  */
+    #mppal td:nth-of-type(1):before {
+        content: "Correo";
+    }
+    #mppal td:nth-of-type(2):before {
+        content: "Nombre(s)";
+    }
+    #mppal td:nth-of-type(3):before {
+        content: "Apellido";
+    }
+    #mppal td:nth-of-type(4):before {
+        content: "Teléfono";
+    }
+    #mppal td:nth-of-type(5):before {
+        content: "Dirección";
+    }
+    #usuarios td:nth-of-type(1):before {
+        content: "Id";
+    }
+    #usuarios td:nth-of-type(2):before {
+        content: "Correo";
+    }
+    #usuarios td:nth-of-type(3):before {
+        content: "Nombre(s)";
+    }
+    #usuarios td:nth-of-type(4):before {
+        content: "Apellidos";
+    }
+    #usuarios td:nth-of-type(5):before {
+        content: "Teléfono";
+    }
+    #usuarios td:nth-of-type(6):before {
+        content: "Dirección";
+    }
+    #usuarios td:nth-of-type(7):before {
+        content: "Tipo de Usuario";
+    }
+    #usuarios td:nth-of-type(8):before {
+        content: "Acciones";
+    }
+    #servicio td:nth-of-type(1):before {
+        content: "Id";
+    }
+    #servicio td:nth-of-type(2):before {
+        content: "Servicio";
+    }
+    #servicio td:nth-of-type(3):before {
+        content: "Fecha de Registro";
+    }
+    #servicio td:nth-of-type(4):before {
+        content: "Inicio Curso";
+    }
+    #servicio td:nth-of-type(5):before {
+        content: "Finalización Curso";
+    }
+    #servicio td:nth-of-type(6):before {
+        content: "Correo";
+    }
+    #servicio td:nth-of-type(7):before {
+        content: "Acciones";
+    }
+    #adminserv td:nth-of-type(1):before {
+        content: "Id";
+    }
+    #adminserv td:nth-of-type(2):before {
+        content: "Tipo Servicio";
+    }
+    #adminserv td:nth-of-type(3):before {
+        content: "Descripción";
+    }
+    #adminserv td:nth-of-type(4):before {
+        content: "Ruta";
+    }
+    #adminserv td:nth-of-type(5):before {
+        content: "Imagen";
+    }
+    #adminserv td:nth-of-type(6):before {
+        content: "Acciones";
+    }
+    #contacto td:nth-of-type(1):before {
+        content: "Id";
+    }
+    #contacto td:nth-of-type(2):before {
+        content: "Nombre";
+    }
+    #contacto td:nth-of-type(3):before {
+        content: "Apellidos";
+    }
+    #contacto td:nth-of-type(4):before {
+        content: "Correo";
+    }
+    #contacto td:nth-of-type(5):before {
+        content: "Teléfono";
+    }
+    #contacto td:nth-of-type(6):before {
+        content: "Mensaje";
+    }
+    #precio td:nth-of-type(1):before {
+        content: "Descripción";
+    }
+    #precio td:nth-of-type(2):before {
+        content: "Precio";
+    }
+    #precio td:nth-of-type(3):before {
+        content: "Número de clases";
+    }
+    #precio td:nth-of-type(4):before {
+        content: "Acciones";
+    }
+    #instructores td:nth-of-type(1):before {
+        content: "Id";
+    }
+    #instructores td:nth-of-type(2):before {
+        content: "Nombres";
+    }
+    #instructores td:nth-of-type(3):before {
+        content: "Rol";
+    }
+    #instructores td:nth-of-type(4):before {
+        content: "Teléfono";
+    }
+    #instructores td:nth-of-type(5):before {
+        content: "Ruta";
+    }
+    #instructores td:nth-of-type(6):before {
+        content: "Imagen";
+    }
+    #instructores td:nth-of-type(7):before {
+        content: "Acciones";
+    }
+    #noticias td:nth-of-type(1):before {
+        content: "Id";
+    }
+    #noticias td:nth-of-type(2):before {
+        content: "Título";
+    }
+    #noticias td:nth-of-type(3):before {
+        content: "Descripción";
+    }
+    #noticias td:nth-of-type(4):before {
+        content: "Ruta";
+    }
+    #noticias td:nth-of-type(5):before {
+        content: "Imagen";
+    }
+    #noticias td:nth-of-type(6):before {
+        content: "Acciones";
+    }
+    #inscripcion td:nth-of-type(1):before {
+        content: "Id";
+    }
+    #inscripcion td:nth-of-type(2):before {
+        content: "Nombre Alumno";
+    }
+    #inscripcion td:nth-of-type(3):before {
+        content: "Nombre Acudiente";
+    }
+    #inscripcion td:nth-of-type(4):before {
+        content: "Parentesco";
+    }
+    #inscripcion td:nth-of-type(5):before {
+        content: "Edad Alumno";
+    }
+    #inscripcion td:nth-of-type(6):before {
+        content: "Correo";
+    }
+    #inscripcion td:nth-of-type(7):before {
+        content: "Teléfono";
+    }
+    #inscripcion td:nth-of-type(8):before {
+        content: "Dirección";
+    }
+    #inscripcion td:nth-of-type(9):before {
+        content: "Curso";
+    }
+    #inscripcion td:nth-of-type(10):before {
+        content: "Acepta";
+    }
+    #inscripcion td:nth-of-type(11):before {
+        content: "Mensaje";
+    }
+    #inscripcion td:nth-of-type(12):before {
+        content: "Acciones";
+    }
+    #productos td:nth-of-type(1):before {
+        content: "Id";
+    }
+    #productos td:nth-of-type(2):before {
+        content: "Servicio";
+    }
+    #productos td:nth-of-type(3):before {
+        content: "Fecha de Registro";
+    }
+    #productos td:nth-of-type(4):before {
+        content: "Inicio Curso";
+    }
+    #productos td:nth-of-type(5):before {
+        content: "Finalización Curso";
+    }
+    #productos td:nth-of-type(6):before {
+        content: "Correo";
+    }
+    #productos td:nth-of-type(7):before {
+        content: "Otros";
+    }
+    #productos td:nth-of-type(8):before {
+        content: "Acciones";
+    }
+}

@@ -7,13 +7,7 @@ require 'conexion.php'
   <html>
 
   <head>
-    <meta charset="utf-8">
-    <meta content="width=device-width, initial-scale=1.0" name="viewport">
-
-    <title>Instinto Acuático</title>
-    <meta content="" name="description">
-    <meta content="" name="keywords">
-
+    <?php include("assets/default/head.html")?>
     <!-- Favicons -->
     <link href="assets/img/favicon.png" rel="icon">
     <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
@@ -37,52 +31,22 @@ require 'conexion.php'
   <body>
     <!-- ======= Header ======= -->
     <header id="header">
-      <div class="container d-flex align-items-center">
-        <div class="logo mr-auto">
-          <h1 class="text-light"><a href="index.php">INSTINTO ACUÁTICO<span></span></a></h1>
-          <!-- Uncomment below if you prefer to use an image logo -->
-          <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
-        </div>
-        <nav class="nav-menu d-none d-lg-block">
-          <ul>
-            <li class="drop-down"><a href="#"><?php echo $user['email']; ?><img src="assets/img/icon_perfil.png" width="30" height="30" alt="<?php echo $user['name'] . " " . $user['lastname']; ?>"></a>
-              <ul>
-                <li><a href="menu_ppal.php">Datos de Usuario</a></li>
-                <?php if ($user['type'] == 1) : ?>
-                  <li><a href="#">Administrar Usuarios</a></li>
-                <?php endif; ?>
-                <li><a href="cerrar.php">Cerrar Sesion</a></li>
-              </ul>
-            </li>
-            <li><a href="#">.</a></li>
-            <li class="drop-down"><a href="">Otros</a>
-              <ul>
-                <li><a href="#">inicio</a></li>
-                <li><a href="#">Sobre nosotros</a></li>
-                <li class="drop-down"><a href="#">Cursos</a>
-                  <ul>
-                    <li><a href="#">Curso 1</a></li>
-                    <li><a href="#">Curso 2</a></li>
-                    <li><a href="#">Curso 3</a></li>
-                    <li><a href="#">Curso 4</a></li>
-                    <li><a href="#">Curso 5</a></li>
-                  </ul>
-                </li>
-                <li><a href="#">Vitrina</a></li>
-                <li><a href="#">Pre-matriculas</a></li>
-                <li><a href="#">Contacto</a></li>
-              </ul>
-            </li>
-          </ul>
-        </nav><!-- .nav-menu -->
-      </div>
+    <?php include("assets/head/headerRegistro.html") ?>
     </header><!-- End Header -->
-    <?php if (!empty($user) && $user['type'] == 1) : ?>
-      <h1> <?php echo $user['email']; ?></h1>
-    <?php endif; ?>
-    <h4>
-      <center>Datos de Contacto</center>
-    </h4>
+           
+  <section id="hero" class="d-flex align-items-center justify-content-center">
+    <div class="container" data-aos="fade-up">
+      <div class="row justify-content-center" data-aos="fade-up" data-aos-delay="150">
+        <div class="col-xl-6 col-lg-8">
+          <h1>Datos de Contacto</h1>
+      <center><h2><?php echo $user['name']; ?>, estos son los usuarios que se han contactado.</h2><center>
+        <center><img src="assets/img/swirl.png" width="100px"></center>
+        </div>
+    <?php include("assets/table/table.html") ?> 
+           
+      </div>
+  </section><
+
     <table class="content-table">
       <thead>
         <tr>
@@ -108,8 +72,8 @@ require 'conexion.php'
             <td><?php echo $results['phone']; ?></td>
             <td><?php echo $results['message']; ?></td>
             <td>
-              <a href='modificarContacto.php?id=<?php echo $results['id']; ?>'><button type='button' class="btn btn-success">Modificar</a>
-              <a href="eliminarContacto.php?id=<?php echo $results['id']; ?>"><button type='button' class="btn btn-danger">Eliminar</a>
+              <a href='modificarAdmin.php?id=<?php echo $results['id']; ?>'><button type='button' class="button4">Modificar</a>
+              <a href="eliminarAdmin.php?id=<?php echo $results['id']; ?>"><button type='button' class="button2">Eliminar</a>
             </td>
           </tr>
         <?php } ?>
@@ -135,5 +99,11 @@ require 'conexion.php'
   </body>
 
   </html>
+  <?php endif; ?>
+  <!-- ======= Footer ======= -->
+  <?php include("assets/footer/footer.html") ?><!-- End Footer -->
+  <?php include("assets/footer/links.html") ?>
 
-<?php endif; ?>
+  </body>
+
+</html>

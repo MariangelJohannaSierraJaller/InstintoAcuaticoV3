@@ -2,7 +2,7 @@
 require 'Seguridad.php';
 require 'conexion.php';
 
-if (!empty($_GET['id'])) {
+if(!empty($_GET['id']) && !empty($user) && $user['type']==1 ){
   $records = $con->prepare('SELECT * FROM usuarios WHERE id = :id');
   $records->bindParam(':id', $_GET['id']);
   $records->execute();
@@ -24,72 +24,111 @@ if (!empty($_GET['id']) && !empty($_GET['email']) && !empty($_GET['name']) && !e
 }
 
 ?>
-<?php if (!empty($user) && $results['type'] == 1) : ?>
+<?php if (!empty($user) && $results['type'] == 0) : ?>
+    
   <!DOCTYPE html>
   <html>
 
   <head>
-    <meta charset="utf-8">
-    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <?php include("assets/default/head.html")?>
 
-    <title>Instinto Acuático</title>
-    <meta content="" name="description">
-    <meta content="" name="keywords">
+    <?php include("assets/head/links.html") ?>
 
-    <!-- Favicons -->
-    <link href="assets/img/favicon.png" rel="icon">
-    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+<html><head><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css"><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script><style>
 
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
 
-    <!-- Vendor CSS Files -->
-    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href="assets/vendor/icofont/icofont.min.css" rel="stylesheet">
-    <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-    <link href="assets/vendor/owl.carousel/assets/owl.carousel.min.css" rel="stylesheet">
-    <link href="assets/vendor/venobox/venobox.css" rel="stylesheet">
-    <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+</style><html><head><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css"><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script><style>
+
+
+</style>
 
     <!-- Template Main CSS File -->
     <link href="assets/css/style.css" rel="stylesheet">
-    <link href="assets/css/styleLogin.css" rel="stylesheet">
+    <link href="assets/css/form.css" rel="stylesheet"> 
   </head>
 
   <body>
+  <!-- ======= Header ======= -->
+   <?php include("assets/head/headerRegistro.html") ?><!-- End Header -->
+
+         <!-- ======= Hero Section ======= -->
+  <section id="hero" class="d-flex align-items-center justify-content-center">
+    <div class="container" data-aos="fade-up">
+
+      <div class="row justify-content-center" data-aos="fade-up" data-aos-delay="150">
+        <div class="col-xl-6 col-lg-8">
+          <h1>Modificar Datos</h1>
+<center><img src="assets/img/salt.gif" alt="funny GIF" width="400px"></center>
+        </div>
+           
+      </div>
+ 
+     </section><!-- End Hero -->
+      
+  
     <?php if (!empty($user)) : ?>
-      <h1> <?php echo $user['email']; ?></h1>
     <?php endif; ?>
-    <h4>
-      <center>Modificar Datos</center>
-    </h4>
-    <div class="formulario">
+
+   
       <?php if (!empty($_GET['id'])) : ?>
         <form action="modificarAdmin.php" method="get">
 
-          <input type="hidden" name="id" value="<?php echo $_GET['id'] ?> ">
-          <label>Correo: </label>
-          <input type="email" name="email" value="<?php echo $results['email'] ?>"><br>
+          <div class="container register">
+                <div class="row">
+                    <div class="col-md-9 register-right">
+                        <div class="tab-content" id="myTabContent">
+                            <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                                <h3 class="register-heading">Datos de Usuario</h3>
+                                <div class="row register-form">
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <input class="form-control" value="<?php echo $_GET['id'] ?>" type="hidden" name="id" >
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Correo: </label>
+                                            <input class="form-control" type="email" name="email" value="<?php echo $results['email'] ?>">
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Nombre: </label>
+                                            <input type="text" name="name" value="<?php echo $results['name'] ?>"class="form-control">
+                                        </div>
+                                        
+                                        <div class="form-group">
+                                            <label>Apellidos: </label>
+                                            <input type="text" name="lastname" value="<?php echo $results['lastname'] ?>" class="form-control">
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Telefono: </label>
+                                            <input type="text" name="phone" value="<?php echo $results['phone'] ?>" class="form-control">
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Direccion: </label>
+                                            <input type="text" name="direction" value="<?php echo $results['direction'] ?>" class="form-control">
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Tipo de Usuario: </label>
+                                            <input type="text" name="type" value="<?php echo $results['type'] ?>" class="form-control">
+                                          </div>
+                                            <?php endif; ?>
+                                            <br>
+                                            <div>
+                                    <button type="submit" class="button4">Guardar</button>
+                                    <a href="menu_ppal.php"><button type='button' class="button2">Cancelar</button></a>
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                            </div>
 
-          <label>Nombre: </label>
-          <input type="text" name="name" value="<?php echo $results['name'] ?>"><br>
+                        </div>
+                    </div>
+                </div>
 
-          <label>Apellidos: </label>
-          <input type="text" name="lastname" value="<?php echo $results['lastname'] ?>"><br>
-
-          <label>Telefono: </label>
-          <input type="text" name="phone" value="<?php echo $results['phone'] ?>"><br>
-
-          <label>Dirrecion: </label>
-          <input type="text" name="direction" value="<?php echo $results['direction'] ?>"><br>
-
-          <label>Tipo de Usuario: </label>
-          <input type="text" name="type" value="<?php echo $results['type'] ?>"><br>
-        <?php endif; ?>
-        <br>
-        <button type="submit" class="btn btn-success">Guardar</button>
+            </div> 
         </form>
-    </div>
+   
+
+ 
 
   </body>
 
@@ -112,3 +151,10 @@ if (!empty($_GET['id']) && !empty($_GET['email']) && !empty($_GET['name']) && !e
   </html>
 
 <?php endif; ?>
+<!-- ======= Footer ======= -->
+  <?php include("assets/footer/footer.html") ?><!-- End Footer -->
+  <?php include("assets/footer/links.html") ?>
+
+</body>
+
+</html>

@@ -1,0 +1,160 @@
+
+::-webkit-input-placeholder { color: black; }
+
+  .formulario input[type="email"], input[type="password"], input[type="text"], input[type="tel"], input[type="time"], input[type="date"], select{
+    color: #000000;
+    outline: none;
+    padding: 10px;
+    display: block;
+    width: 300px;
+    border-radius: 3px;
+    border: 3px solid  rgba(252,180,10);
+    margin: 20px auto;
+    background:white;
+    box-shadow:5px 5px 5px rgba(21,75,79);
+    position:relative;
+    width:50%;
+  }
+
+  .formulario{
+  position:relative;
+  display:inline-block;
+  width:700px;
+  margin:auto;
+  background:transparent;
+  padding: 1px 20px;
+  box-sizing:border-box;
+  border-radius:10px;
+  text-align:center;
+  overflow: hidden;
+}
+
+.formulario4 input[type="email"], input[type="password"], input[type="text1"], input[type="tel"], input[type="time"], input[type="date"], select{
+    color: #000000;
+    outline: none;
+    padding: 10px;
+    display: block;
+    width: 300px;
+    border-radius: 3px;
+    border: 3px solid  rgba(252,180,10);
+    margin: 20px auto;
+    background:white;
+    box-shadow:5px 5px 5px rgba(21,75,79);
+    position:relative;
+    width:100%;
+  }
+
+  .formulario4  input[type="text"]{
+    color: #000000;
+    outline: none;
+    padding: 10px;
+    display: block;
+    width: 300px;
+    border-radius: 3px;
+    border: 3px solid  rgba(252,180,10);
+    margin: 20px auto;
+    background:white;
+    box-shadow:5px 5px 5px rgba(21,75,79);
+    position:relative;
+    width:50%;
+  }
+
+   .formulario4  input[type="number"]{
+    color: #000000;
+    outline: none;
+    padding: 10px;
+    display: block;
+    width: 300px;
+    border-radius: 3px;
+    border: 3px solid  rgba(252,180,10);
+    margin: 20px auto;
+    background:white;
+    box-shadow:5px 5px 5px rgba(21,75,79);
+    position:relative;
+    width:25%;
+  }
+
+  .formulario4{
+  position:relative;
+  display:inline-block;
+  width:700px;
+  margin:auto;
+  background:transparent;
+  padding: 1px 20px;
+  box-sizing:border-box;
+  border-radius:10px;
+  text-align:center;
+  overflow: hidden;
+}
+
+.formulario2  input[type="email"], input[type="password"], input[type="text"], input[type="tel"], input[type="time"], input[type="date"], select{
+    color: #000000;
+    outline: none;
+    padding: 10px;
+    display: block;
+    width: 300px;
+    border-radius: 3px;
+    border: 3px solid  rgba(252,180,10);
+    margin: 20px auto;
+    background:white;
+    box-shadow:5px 5px 5px rgba(21,75,79);
+    position:relative;
+    width:40%;
+  }
+
+  .formulario2{
+  position:relative;
+  display:inline-block;
+  width:700px;
+  margin:auto;
+  background:transparent;
+  padding: 1px 20px;
+  box-sizing:border-box;
+  border-radius:10px;
+  text-align:center;
+  overflow: hidden;
+}
+
+.formulario3 input[type="email"], input[type="password"], input[type="text1"], input[type="tel"], input[type="time"], input[type="date"], select{
+    color: #000000;
+    outline: none;
+    padding: 10px;
+    display: block;
+    width: 300px;
+    border-radius: 3px;
+    border: 3px solid  rgba(252,180,10);
+    margin: 20px auto;
+    background:white;
+    box-shadow:5px 5px 5px rgba(21,75,79);
+    position:relative;
+    width:50%;
+  }
+
+  .formulario3  input[type="text"]{
+    color: #000000;
+    outline: none;
+    padding: 10px;
+    display: block;
+    width: 300px;
+    border-radius: 3px;
+    border: 3px solid  rgba(252,180,10);
+    margin: 20px auto;
+    background:white;
+    box-shadow:5px 5px 5px rgba(21,75,79);
+    position:relative;
+    width:30%;
+  }
+
+  .formulario3{
+  position:relative;
+  display:inline-block;
+  width:700px;
+  margin:auto;
+  background:transparent;
+  padding: 1px 20px;
+  box-sizing:border-box;
+  border-radius:10px;
+  text-align:center;
+  overflow: hidden;
+}
+

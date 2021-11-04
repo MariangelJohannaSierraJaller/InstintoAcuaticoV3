@@ -1,0 +1,105 @@
+
+    <!-- ======= Header ======= -->
+    <header id="header" class="fixed-top">
+      <div class="container d-flex align-items-center">
+
+       <div class="logo mr-auto">
+        <a href="index.php"><img src="assets/img/foot.png" alt="" class="img-fluid"></a>
+      </div>
+
+        <nav class="nav-menu d-none d-lg-block">
+          <ul>
+            <li class="drop-down"><a href="index.php">Menú Principal</a>
+              <ul>
+                <li class="active"><a href="index.php">Inicio</a></li>
+            <li><a href="index.php#about">Sobre nosotros</a></li>
+            <li class="drop-down"><a href="institucional.php" title="Institucional">Institucional</a>
+            <ul>
+              <li><a href="institucional.php #values" >Misión y visión</a></li>
+              <li><a href="institucional.php #clients" >Valores corporativos</a></li>
+              <li><a href="institucional.php #team" >Equipo</a></li>
+              </ul>
+          </li> 
+          <li class="drop-down"><a href="Pservicios.php">Servicios</a>
+              <ul>
+                <li><a href="cursos.php">Niveles</a></li>
+                <li><a href="vitrina.html">Vitrina</a></li>
+                <li><a href="Pservicios.php">Portafolio de Servicios</a></li>
+                <li><a href="menu_noticias.php">Noticias</a></li>
+              </ul>
+            </li>   
+        </ul>
+        </li>
+            <li class="drop-down"><a href="">Usuarios</a>
+              <ul>
+                <li class="drop-down"><a href="">Realizar solicitudes</a>
+                <ul>
+                <li><a href="menu_ss.php">Solicitar Servicio</a></li>
+                <li><a href="contacto.php">Solicitar Contacto</a></li>
+                <li><a href="menu_productos.php">Solicitud Productos</a></li>
+                <li><a href="inscripcion.php">Formalización Inscripción</a></li>
+                </ul>
+                </li>
+                <li class="drop-down"><a href="">Mis solicitudes</a>
+                <ul>
+                <li><a href="menu_ssUser.php">Solicitudes de Servicio</a></li>
+                <li><a href="contactoUser.php">Solicitudes de Contacto</a></li>
+                <li><a href="menu_productosUser.php">Solicitudes de Productos</a></li>
+                </ul>
+                </li>
+              </ul>
+            </li>
+            <?php if ($user['type'] == 1) : ?>
+            <li class="drop-down"><a href="">Administración</a>
+              <ul>
+                <li><a href="nuevoUser.php">Nuevo Usuario</a></li>
+                <li class="drop-down"><a href="">Registros</a>
+                <ul>
+                <li><a href="menu_ppalAdmin.php">Administrar Usuarios</a></li>
+                <li><a href="contactoAdmin.php">Registro de Contactos</a></li>
+                <li><a href="menuInscripcion_Admin.php">Registro Inscripciones</a></li>
+                <li><a href="menu_productosAdmin.php">Registro Productos</a></li>
+                </ul>
+                </li>
+                <li class="drop-down"><a href="">Noticias</a>
+                <ul>
+                <li><a href="noticias.php">Agregar Noticia</a></li>
+                <li><a href="noticiasAdmin.php">Administrar Noticias</a></li>
+                </ul>
+                </li>
+                <li class="drop-down"><a href="">Instructores</a>
+                <ul>
+                <li><a href="instructoresAdmin.php">Insertar Instructores</a></li>
+                <li><a href="menu_instructoresAdmin.php">Administrar Instructores</a></li>
+                </ul>
+                </li>
+                <li class="drop-down"><a href="">Precio</a>
+                <ul>
+                <li><a href="precioAdmin.php">Insertar Precio</a></li>
+                <li><a href="AdminPrecios.php">Administrar Precio</a></li> 
+                </ul>
+                </li>
+                <li class="drop-down"><a href="">Servicios</a>
+                <ul>
+                <li><a href="menu_Pservicios.php">Crear nuevo Servicio</a></li> 
+                <li><a href="menu_ssAdmin.php">Registro de Servicios</a></li>
+                <li><a href="menu_PserviciosAdmin.php">Administrar Servicios</a></li> 
+                </ul>
+                </li>
+              </ul>
+            </li>
+            <?php endif; ?>
+
+
+            <li class="drop-down"><a href="menu_ppal.php"><?php echo $user['email']; ?><img src="assets/img/hero-img.png" width="30" height="30" alt="<?php echo $user['name'] . " " . $user['lastname']; ?>"></a>
+              <ul>
+                <li><a href="menu_ppal.php">Datos de Usuario</a></li>
+                <li><a href="cerrar.php">Cerrar Sesion</a></li>
+              </ul>
+            </li>
+          </ul>
+        </nav><!-- .nav-menu -->
+
+
+      </div>
+    </header><!-- End Header -->

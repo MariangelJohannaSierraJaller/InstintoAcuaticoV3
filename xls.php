@@ -13,7 +13,8 @@ header("Content-Disposition: attachment; filename= ".$name.".xls");
     <thead>
         <tr>
             <?php
-            $records = $con->prepare('EXPLAIN '.$table.'');
+            /*Consulta Estructura de Tabla para Obtener Encabeazados*/
+            $records = $con->prepare('EXPLAIN '.$table.''); 
             $records->execute();
             while ($head = $records->fetch(PDO::FETCH_ASSOC)) { ?>
                     <td><b><?php echo $head['Field']; ?><b></td>
@@ -22,11 +23,13 @@ header("Content-Disposition: attachment; filename= ".$name.".xls");
     </thead>
     <tbody>
         <?php
+        /*Consulta Datos de la Tabla*/
         $records = $con->prepare('SELECT * FROM '.$table.'');
         $records->execute();
         while ($results = $records->fetch(PDO::FETCH_ASSOC)) { ?>
             <tr>
                 <?php
+                /*Consulta Estructura de Tabla para Obtener datos segun encabezado*/
                 $data = $con->prepare('EXPLAIN '.$table.'');
                 $data->execute();
                 while ($head = $data->fetch(PDO::FETCH_ASSOC)) { ?>

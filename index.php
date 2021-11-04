@@ -2,16 +2,7 @@
 <html lang="en">
 
 <head>
-  <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
-
-  <title>Instinto Acuático</title>
-  <meta content="" name="description">
-  <meta content="" name="keywords">
-
-  <!-- Favicons -->
-  <link href="assets/img/favicon.png" rel="icon">
-  <link href="assets/img/favicon.png" rel="icon">
+  <?php include("assets/default/head.html")?>
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
@@ -30,36 +21,7 @@
 
 <body>
   <!-- ======= Header ======= -->
-  <header id="header" class="fixed-top">
-    <div class="container d-flex align-items-center">
-
-      <div class="logo mr-auto">
-  
-  
-        <a href="index.php"><img src="assets/img/foot.png" alt="" class="img-fluid"></a>
-      </div>
-
-      <nav class="nav-menu d-none d-lg-block">
-        <ul>
-          <li class="active"><a href="index.php">Inicio</a></li>
-          <li><a href="institucional.html">Institucional</a></li>
-        </li>
-        <li class="drop-down"><a href="Pservicios.php">Servicios</a>
-          <ul>
-            <li><a href="cursos.html">Niveles</a></li>
-            <li><a href="vitrina.html">Implementos</a></li>
-            <li><a href="Pservicios.php">Portfolio de Servicios</a></li>
-          </ul>
-        </li>
-        
-        <li><a href="contacto.php">Contacto</a></li>
-         <li><a href="Login.php" class="get-started-btn scrollto">Iniciar sesión</a></li>
-        </ul>
-      </nav><!-- .nav-menu -->
-
-
-    </div>
-  </header><!-- End Header -->
+  <?php include("assets/head/headerHome.html") ?><!-- End Header -->
 
  <!-- ======= Hero Section ======= -->
   <section id="hero" class="d-flex align-items-center justify-content-center">
@@ -177,6 +139,14 @@
                   </a>
                 </div>
               </div>
+              <div class="col-md-12">
+                <div class="info-box mt-4" data-aos="fade-up" data-aos-delay="100">
+                  <h3>Puedes enviarnos una solicitud</h3>
+                  <p>Si deseas que te contactemos puedes llenar la solicitud de contacto.</p>
+                  <a href="contacto.php">
+                    <p>Solicitud de Contacto</p>
+                  </a>
+                </div>
           </div>
 
         </div>
@@ -189,19 +159,8 @@
   </main><!-- End #main -->
 
   <!-- ======= Footer ======= -->
-  <footer id="footer">
-
-    <div class="container footer-bottom clearfix">
-      <div class="copyright">
-        <center><a href="index.php"><img src="assets/img/foot.png" width="200px" class="img-fluid"></a><a href="https://www.instagram.com/instintoacuatico/" target="_blank"><img src="assets/img/inst.png" width="30px" class="img-fluid"></a><a href="https://api.whatsapp.com/send/?phone=573136083995&text=Comunicate+con+Instinto+Acuatico&app_absent=0" target="_blank"><img src="assets/img/wha.png" width="30px" class="img-fluid"></a></center>
-       <center> &copy;<strong><span>Instinto Acuático
-        </span></strong>. Todos los derechos reservados a <a href="grupo3/index.html" target="_blank">Grupo 3</a>.</center>
-        
-        
-      </div>
-
-    </div>
-  </footer><!-- End Footer -->
+  <?php include("assets/footer/footer.html") ?>
+ <?php include("assets/footer/links.html") ?><!-- End Footer -->
 
 
 

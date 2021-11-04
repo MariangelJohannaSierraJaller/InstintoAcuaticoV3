@@ -2,12 +2,11 @@
 
 	/*PHPmyAdmin en linea https://www.phpmyadmin.co/*/	
 
-	/* Conexion en xampp
+	/*Conexion en xampp*/
 	$server = 'localhost';
 	$username = 'root';
 	$password = '';
 	$database = 'instintoacuatico';
-	*/
 
 	/* Conexion externamente a freesqldatabase en https://www.phpmyadmin.co/
 	$server = 'sql10.freesqldatabase.com';
@@ -28,11 +27,11 @@
 	$password = 'n#s@@!6hLe@wd8A';
 	$database = 'instintoacuatico';*/
 
-	/* Conexion externamente a  Remote mysql en https://remotemysql.com/*/
+	/* Conexion externamente a  Remote mysql en https://remotemysql.com/
 	$server = 'remotemysql.com:3306';
 	$username = 'ybH6EegF16';
 	$password = 'CUsTZJ7iQT';
-	$database = 'ybH6EegF16';
+	$database = 'ybH6EegF16'; */
 	
 	try {
 	  $con = new PDO("mysql:host=$server;dbname=$database;", $username, $password);

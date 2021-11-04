@@ -38,69 +38,96 @@ if (!empty($_GET['id']) && !empty($_POST['service']) && !empty($_POST['descripti
   <html>
 
   <head>
-    <meta charset="utf-8">
-    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <?php include("assets/default/head.html")?>
+<?php include("assets/head/links.html") ?>
 
-    <title>Instinto Acuático</title>
-    <meta content="" name="description">
-    <meta content="" name="keywords">
+    <html><head><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css"><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script><style>
 
-    <!-- Favicons -->
-    <link href="assets/img/favicon.png" rel="icon">
-    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+</style><html><head><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css"><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script><style>
 
-    <!-- Vendor CSS Files -->
-    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href="assets/vendor/icofont/icofont.min.css" rel="stylesheet">
-    <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-    <link href="assets/vendor/owl.carousel/assets/owl.carousel.min.css" rel="stylesheet">
-    <link href="assets/vendor/venobox/venobox.css" rel="stylesheet">
-    <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+
+</style>
 
     <!-- Template Main CSS File -->
     <link href="assets/css/style.css" rel="stylesheet">
-    <link href="assets/css/styleLogin.css" rel="stylesheet">
+    <link href="assets/css/form.css" rel="stylesheet">
   </head>
 
   <body>
+   <!-- ======= Header ======= -->
+   <?php include("assets/head/headerRegistro.html") ?><!-- End Header -->
+
+     <!-- ======= Hero Section ======= -->
+  <section id="hero" class="d-flex align-items-center justify-content-center">
+    <div class="container" data-aos="fade-up">
+
+      <div class="row justify-content-center" data-aos="fade-up" data-aos-delay="150">
+        <div class="col-xl-6 col-lg-8">
+          <h1>Modificar Servicio</h1>
+          <center><img src="assets/img/clav.gif" alt="funny GIF" width="250px"></center>
+        </div>
+      </div>
+ 
+  </section><!-- End Hero -->
+  
+
     <?php if (!empty($user)) : ?>
-      <h1> <?php echo $user['email']; ?></h1>
     <?php endif; ?>
-    <h4>
-      <center>Modificar Datos</center>
-    </h4>
     <div class="formulario">
       <?php if (!empty($_GET['id'])) : ?>
         <form action="modificar_PserviceAdmin.php?id=<?php echo $_GET['id'] ?>" method="post" enctype="multipart/form-data">
+<div class="container register">
+                <div class="row">
 
-          <input type="hidden" name="id" value="<?php echo $_GET['id'] ?> ">
-
-          <label>Servicio: </label>
-          <select type="text" name="service" required>
+                    <div class="col-md-9 register-right">
+                        <div class="tab-content" id="myTabContent">
+                            <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                                <h3 class="register-heading">Servicio</h3>
+                                <div class="row register-form">
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <input class="form-control" value="<?php echo $_GET['id'] ?>" type="hidden" name="id" >
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Servicio: </label>
+                                            <select type="text" name="service" required>
             <option value="<?php echo $results['service'] ?>"><?php echo $results['service'] ?></option>
           </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Descripción: </label>
+                                            <input type="text" name="description" value="<?php echo $results['description'] ?>" class="form-control">
+                                        </div>
+                                        
+                                        <div class="form-group">
+                                            <label>Ruta(se actualiza al cambiar la imagen): </label>
+                                            <input type="text" name="url" value="<?php echo $results['url'] ?>" class="form-control">
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Imagen: </label>
+                                            <img src="<?php echo $results['url'] ?>" alt="<?php echo $results['service'] ?>" style="width:40%">
+                                            <input type="file" name="image">
+                                        </div>
+                                        
+                                            <?php endif; ?>
+                                            <br>
+                                    <button type="submit" class="button4">Guardar</button>
+                                   <a href="menu_ppal.php"><button type='button' class="button2">Cancelar</button></a>
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                            </div>
 
-          <label>Descripción: </label>
-          <input type="text" name="description" value="<?php echo $results['description'] ?>"><br>
+                        </div>
+                    </div>
+                </div>
 
-          <label>Ruta(se actualiza al cambiar la imagen): </label>
-          <input type="text" name="url" value="<?php echo $results['url'] ?>"><br>
-
-          <label>Imagen: </label><br>
-          <img src="<?php echo $results['url'] ?>" alt="<?php echo $results['service'] ?>" style="width:40%"><br><br>
-          <input type="file" name="image">
-            <br>
-            <br>
-
-        <?php endif; ?>
-        <br>
-        <button type="submit" class="btn btn-success">Guardar</button>
+            </div>
         </form>
     </div>
-
+ 
   </body>
 
   </html>
@@ -122,3 +149,10 @@ if (!empty($_GET['id']) && !empty($_POST['service']) && !empty($_POST['descripti
   </html>
 
 <?php endif; ?>
+<!-- ======= Footer ======= -->
+  <?php include("assets/footer/footer.html") ?><!-- End Footer -->
+  <?php include("assets/footer/links.html") ?>
+
+</body>
+
+</html>

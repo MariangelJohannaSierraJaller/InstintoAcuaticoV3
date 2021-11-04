@@ -18,7 +18,7 @@ if(is_null($maxcode))
 <!DOCTYPE html>
 <html>
 <head>
-<title>portafolio de servicios</title>
+<title>Portafolio de servicios</title>
 <link rel="stylesheet" href="style.css" />
 <link rel="stylesheet" href="js/jquery-ui-1.11.4.custom/jquery-ui.min.css" />
 </head>

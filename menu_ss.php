@@ -3,7 +3,7 @@ require 'Seguridad.php';
 require 'conexion.php';
 
 $message = '';
-$class = '';
+  $tipo = '';
 
 if (!empty($_POST['email'])) {
   $sql = "INSERT INTO registros (Service_Name, AR_Date, email) VALUES (:curso, :fechar, :email)";
@@ -13,71 +13,73 @@ if (!empty($_POST['email'])) {
   $stmt->bindParam(':fechar', $fecha);
   $stmt->bindParam(':email', $_POST['email']);
   if ($stmt->execute()) {
-    $message = 'Tu Registro ha sido creada con éxito.';
-    $class = "text-true";
+    $message = 'Tu solicitud ha sido registrada con éxito.';
+    $tipo="success";
   } else {
-    $message = 'Tu Registro no se pudo crear.';
-    $class = "text-false";
+    $message = 'Tu solicitud no se pudo registrar.';
+    $tipo="error";
   }
 }
 ?>
+
 <?php if (!empty($user)) : ?>
-  <!DOCTYPE html>
-  <html>
 
-  <head>
-    <meta charset="utf-8">
-    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+ <!DOCTYPE html>
+<html lang="en">
 
-    <title> Sign Up </title>
-    <meta content="" name="description">
-    <meta content="" name="keywords">
+<head>
+<?php include("assets/default/head.html")?>
+<?php include("assets/head/links.html") ?>
 
-    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Favicons -->
-    <link href="assets/img/favicon.png" rel="icon">
-    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+  <!-- Template Main CSS File -->
+  <link href="assets/css/style.css" rel="stylesheet">
+  <link href="assets/css/camposTexto.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
 
-    <!-- Template Main CSS File -->
-    <link href="assets/css/styleLogin.css" rel="stylesheet">
+<body>
+   <!-- ======= Header ======= -->
+   <?php include("assets/head/headerRegistro.html") ?><!-- End Header -->
+     <!-- ======= Hero Section ======= -->
+  <section id="hero" class="d-flex align-items-center justify-content-center">
+    <div class="container" data-aos="fade-up">
 
-    <!-- =======================================================
-  * Template Name: Bocor - v2.2.1
-  * Template URL: https://bootstrapmade.com/bocor-bootstrap-template-nice-animation/
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
-  </head>
-
-  <body>
-    <?php if (!empty($message)) : ?>
-      <div class="<?php echo $class; ?>">
-        <p>
-          <center><?= $message ?></center>
-        </p>
+      <div class="row justify-content-center" data-aos="fade-up" data-aos-delay="150">
+        <div class="col-xl-6 col-lg-8">
+          <h1>Solicitud de Servicio</h1>
+          <h2>Realiza la solicitud del curso que deseas tomar</h2>
+        </div>
+             <?php if (!empty($message)) : ?>
+      <script>
+      Swal.fire({icon:"<?php echo($tipo); ?>",title:"<?php echo($message); ?>",timer:"6000",timerProgressBar:"true"});
+    </script>
       </div>
-      <br></br>
     <?php endif; ?>
     <nav class="main">
-      <a href="index.php"><img src="assets/img/swirl.png"></a>
     </nav>
     <div class="formulario">
-      <h1>Solicitud De Servicios</h1>
-      <form action="menu_ss.php" method="post">
+       <form action="menu_ss.php" method="post">
         <input type="hidden" name="email" value="<?php echo $user['email'] ?> ">
         <select name="curso" required>
           <option value="">Seleccione</option>
-          <option value="Parvulos">Parvulos </option>
+          <option value="Matronatacion">Matronatación</option>
+          <option value="Parvulos">Párvulos </option>
           <option value="Predeportivos">Predeportivos</option>
           <option value="Escolares">Escolares</option>
           <option value="Adultos ">Adultos </option>
         </select>
-        <button type="submit" class="btn btn-success">Guardar</button>
+        <button type="submit" class="btn btn-primary">Guardar</button>
       </form>
     </div>
   </body>
 
+
   </html>
+      </div>
+ 
+  </section><!-- End Hero -->
+
+
 <?php else : ?>
   <!DOCTYPE html>
   <!--html cuando no se inicio sesion-->
@@ -96,3 +98,12 @@ if (!empty($_POST['email'])) {
   </html>
 
 <?php endif; ?>
+<!-- ======= Footer ======= -->
+  <?php include("assets/footer/footer.html") ?><!-- End Footer -->
+
+
+  <?php include("assets/footer/links.html") ?>
+
+</body>
+
+</html>

@@ -1,0 +1,203 @@
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.ContactoBanner{
+    width:100%;
+    height:100vh;
+    overflow:hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(137, 163, 222, 0.78);
+}
+
+section{
+    display:flex;
+    position: relative;
+    z-index: 1;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding:20px;
+    width: 100%;
+    background:transparent;
+}
+
+.ContactoContainer{
+    position:relative;
+    z-index: 1000;
+    width:100%;
+    max-width: 1000px;
+    padding:50px;
+    background:rgba(144, 171, 234, 0.78);
+    box-shadow:0 25px 45px  rgba(79, 103, 159, 0.78);
+    border:1px solid rgba(255,255,255,0.25);
+    border-right:1px solid rgba(255,255,255,0.1);
+    border-bottom:1px solid rgba(255,255,255,0.1);
+    border-radius:10px;
+    -webkit-border-radius:10px;
+    -moz-border-radius:10px;
+    -ms-border-radius:10px;
+    -o-border-radius:10px;
+    overflow: hidden;
+    backdrop-filter: blur(25px);
+}
+
+.ContactoContainer::before{
+    content: "";
+    position:absolute;
+    top:0;
+    left:-40%;
+    width:100%;
+    height:100%;
+    background: rgba(0,0,0,0.05);
+    pointer-events: none;
+    transform: skewX(-15deg);
+    -webkit-transform: skewX(-15deg);
+    -moz-transform: skewX(-15deg);
+    -ms-transform: skewX(-15deg);
+    -o-transform: skewX(-15deg);
+}
+
+.ContactoContainer h1{
+    width:100%;
+    text-align: center;
+    font-family: "Open Sans", sans-serif;
+    font-size: 24px;
+  color: #012970;
+  font-weight: 700;
+  margin-bottom: 18px;
+}
+
+.ContactoContainer span{
+    width:100%;
+    text-align: left;
+    color:rgba(11, 28, 68, 0.82);
+    font-size: 20px;
+    margin-bottom: 20px;
+    font-weight: 500;
+    font-family: "Open Sans", sans-serif;
+}
+
+.ContactoContainer .logo{
+    text-align: center;
+}
+
+.ContactoContainer .logo img{
+    width:10%;
+}
+
+
+.ContactoContainer .formsContacto{
+    position:relative;
+    width:100%;
+    display:grid;
+    grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+}
+
+.ContactoContainer .formsContacto .col{
+    position: relative;
+    width:100%;
+    padding:0 10px;
+    margin:30px 0 20px;   
+}
+
+.ContactoContainer .formsContacto .col .inputBox{
+    position:relative;
+    width:100%;
+    height:40px;
+    color:white;
+}
+
+.ContactoContainer .formsContacto .col .inputBox input, .ContactoContainer .formsContacto .col .inputBox textarea, .ContactoContainer .formsContacto .col .inputBox select{
+    position: absolute;
+    width:100%;
+    height:100%;
+    font-size:15px;
+    padding:0px 0px;
+    z-index: 1;
+    color: #000;;
+
+}
+
+.ContactoContainer .formsContacto .col .inputBox .text{
+    position: absolute;
+    top:-35px;
+    left:-10px;
+    line-height: 40px;
+    font-size: 18px;
+    padding:0 10px;
+    display:block;
+}
+
+.ContactoContainer .formsContacto .col input[type=submit]{
+    border: none;
+    padding:10px 40px;
+    cursor: pointer;
+    outline: none;
+    background:rgba(79, 103, 159, 0.78);
+    color: rgba(240, 245, 255, 0.78);
+    font-weight: 600;
+    font-size: 18px;
+    border-radius: 4px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -ms-border-radius: 4px;
+    -o-border-radius: 4px;
+}
+
+.text-true{
+  font-family: "Open Sans", sans-serif;
+  color: rgba(7, 66, 97, 1);
+  border-radius: 10px;
+  padding: 5px;
+  border: 2px solid rgba(10, 87, 128, 1);
+  transition: all ease-in-out 0.3s;
+  display: inline-block;
+  background:rgba(144, 184, 205, 1);
+  font-weight: 700;
+  text-align: center;
+  font-size: 14px;
+  display: flex;
+  justify-content: center;
+
+}
+.text-false{
+  font-family: "Open Sans", sans-serif;
+  color: rgba(145, 29, 29, 1);
+  border-radius: 10px;
+  padding: 5px;
+  border: 2px solid rgba(219, 60, 60, 1);
+  transition: all ease-in-out 0.3s;
+  display: inline-block;
+  background:rgba(223, 136, 136, 1);
+  font-weight: 700;
+  text-align: center;
+  font-size: 14px;
+  display: flex;
+  justify-content: center;
+
+}
+
+.button1 {
+    border: none;
+    padding:10px 40px;
+    cursor: pointer;
+    outline: none;
+    background:rgba(79, 103, 159, 0.78);
+    color: rgba(240, 245, 255, 0.78);
+    font-weight: 600;
+    font-size: 18px;
+    border-radius: 4px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -ms-border-radius: 4px;
+    -o-border-radius: 4px;
+}
+a {
+  color: rgba(240, 244, 255, 0.78);
+}
+
